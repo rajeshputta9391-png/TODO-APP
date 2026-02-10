@@ -1,0 +1,176 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1bba, #1f5f08);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* To-Do App Card */
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  background: white;
+  margin: 40px 20px 70px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.todo-app h2 {
+  color: #002765;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* Optional image next to heading */
+.todo-app img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+/* Input row */
+.row {
+  display: flex;
+  align-items: center;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+/* Input */
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-size: 1rem;
+  min-width: 0;
+}
+
+/* Add Button */
+.add {
+  border: none;
+  outline: none;
+  padding: 16px 30px;
+  background: orangered;
+  color: #fff;
+  border-radius: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add:hover {
+  background: #d43700;
+}
+
+/* To-Do Item */
+ul li {
+  list-style: none;
+  font-size: 1rem;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  word-break: break-word;
+}
+
+/* Checkbox before item */
+ul li::before {
+  content: '';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(uncheck.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+
+/* Checked item */
+ul li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url(checked.png);
+}
+
+/* Delete button */
+ul li span {
+  position: absolute;
+  right: 0px;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  border-radius: 50px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+ul li span:hover {
+  background-color: #edeef0;
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 600px) {
+  .todo-app {
+    padding: 25px 20px 50px;
+  }
+
+  .todo-app h2 {
+    font-size: 1.3rem;
+  }
+
+  .row {
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .add {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  ul li {
+    padding-left: 45px;
+    font-size: 1rem;
+  }
+
+  ul li span {
+    top: 10px;
+    right: 10px;
+  }
+}
